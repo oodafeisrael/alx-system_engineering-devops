@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# destroying a process even if it protects SIGTERM
+id=$(pgrep -f './7-highlander')
+if [ -n "$id" ]; then
+kill -s SIGTERM "$id"
+else
+echo "Process not found"
+fi
