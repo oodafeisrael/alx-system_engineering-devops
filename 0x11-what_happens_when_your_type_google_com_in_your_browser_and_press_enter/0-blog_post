@@ -1,0 +1,86 @@
+Q: what happens when you type https://www.google.com in your browser and press Enter?
+When you type "https://www.google.com" into your browser and press Enter, several steps occur in the background to retrieve and display the requested web page. Here's a simplified overview of the process, covering DNS request, TCP/IP, firewall, HTTPS/SSL, load-balancer, web server, application server, and database:
+
+*DNS Request:
+
+Your browser initiates a Domain Name System (DNS) request to translate the human-readable domain name "www.google.com" into an IP address.
+The request goes to your local DNS resolver, which may have the IP address cached or may need to query authoritative DNS servers to find the IP for "www.google.com".
+ DNS, which stands for Domain Name System, is essentially a dictionary that maps URLs of Internet resources to their corresponding IP addresses. Most people call it "the phonebook of the Internet".
+
+In most cases, the IP of the first outbound DNS server is provided by the ISP, which can be configured on a per-router or per-machine basis. It's also possible to use any other DNS server by setting the corresponding IP address in system's settings.
+
+Any individual DNS server may route a query to a different DNS server if it doesn't have the requested DNS record.
+
+Browsers and operating systems have their own local DNS cache which helps avoid querying DNS servers every time.
+
+*TCP/IP:
+
+Once the IP address is obtained, your browser establishes a Transmission Control Protocol (TCP) connection with the server associated with that IP address.
+Internet Protocol (IP) is used for routing packets across the Internet to the correct destination.
+
+*Firewall:
+
+Packets containing your request traverse various routers and firewalls on the Internet to reach Google's servers.
+Firewalls may filter and control the incoming and outgoing network traffic, but they typically allow HTTP/HTTPS traffic.
+
+*HTTPS/SSL:
+
+If the website uses HTTPS (as indicated by the "https://" in the URL), a secure connection is established using the Secure Sockets Layer (SSL) or Transport Layer Security (TLS) protocols.
+SSL/TLS encrypts the data exchanged between your browser and the server, ensuring privacy and security.
+
+*Load-Balancer:
+
+Many large-scale websites, like Google, employ load balancers to distribute incoming web traffic across multiple servers.
+The load balancer helps optimize resource utilization, maximize throughput, minimize response time, and avoid overload on any single server.
+
+*Web Server:
+
+The request reaches one of Google's web servers, which hosts the static content (HTML, CSS, JavaScript, images) of the website.
+The web server processes the request and sends back the necessary files to your browser.
+
+*Application Server:
+
+For dynamic content or interactive features, the web server may communicate with an application server.
+The application server runs server-side scripts or applications, generates dynamic content, and sends it back to the web server.
+
+*Database:
+
+If the content is stored in a database, the application server may query the database for the required information.
+The retrieved data is then processed, formatted, and sent back to the web server.
+
+*Response to Browser:
+
+The web server sends the final HTML, CSS, and other assets back to your browser through the secure connection.
+
+*Rendering in Browser:
+
+Your browser receives the content and renders the web page, displaying it on your screen.
+Throughout this process, various security measures (firewalls, HTTPS) ensure the integrity and confidentiality of the data exchanged between your browser and the server, and load balancing helps distribute the workload efficiently. This sequence of steps illustrates the complex interplay between different components of the internet infrastructure when accessing a website.
+
+In summary. any time you type "google.com" and press Enter, the browser takes a number of steps outlined as follows:
+
+1) Resolve IP address of the URL via DNS
+
+2) Generate an HTTP request with headers (accept, user-agent, cookie, etc)
+
+3) Open an HTTP connection to the resolved IP address
+
+4) Send the request to the server
+
+5) Receive the response from the server
+
+6) Parse response headers
+
+7) Depending on the response headers, perform additional operations
+
+8) Decompress the response body if it's compressed (e.g. gzipped)
+
+9) Parse the HTML code inside the response body
+
+10) Resolve any additional resources (images, stylesheets, scripts, etc)
+
+11) Start loading those resources via their URLs using the same steps
+
+12) Render the HTML as soon as required resources are loaded, continue loading r  emaining resources in background
+
+13) When all the resources are loaded, close the HTTP connection
