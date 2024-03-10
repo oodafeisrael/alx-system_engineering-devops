@@ -1,4 +1,6 @@
 0x19-postmortem
+
+![Postmortem](https://media.licdn.com/dms/image/D4D12AQFVdnOBSlvxpQ/article-cover_image-shrink_423_752/0/1710041441063?e=1715817600&v=beta&t=WVspK2BGjUtdoSSQgNnUkHLuUH3PvGG05OwRR-wKjyI)
 Postmortem: Web Stack Debugging Incident
 Issue Summary:
 Our organization website experienced Authentication Service failure.
